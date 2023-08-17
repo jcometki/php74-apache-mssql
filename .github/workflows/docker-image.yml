@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: $env.GITHUB_REPOSITORY
+          images: jcometki/php74-apache-mssql
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -32,4 +32,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: $env.GITHUB_REPOSITORY:latest
+          tags: ${{ steps.meta.outputs.tags }}:latest
+          #labels: ${{ steps.meta.outputs.labels }}
