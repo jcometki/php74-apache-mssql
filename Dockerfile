@@ -1,5 +1,9 @@
 FROM php:7.4-apache
 
+LABEL version="1.0"
+LABEL description="Imagem base para aplicações PHP 7.4 + Apache + MSSSL Drivers"
+LABEL org.opencontainers.image.authors="joseandro@hotmail.com"
+
 ENV TZ=America/Campo_Grande
 ENV ACCEPT_EULA=Y
 
